@@ -22,9 +22,15 @@
         <label for="author">Tác giả:</label>
         <input type="text" name="author" value="{{ old('author') }}"><br>
 
+        <label for="price">Giá (VNĐ):</label>
+        <input type="number" name="price" step="0.01" value="{{ old('price') }}"><br>
+
         <label for="description">Mô tả:</label>
         <textarea name="description">{{ old('description') }}</textarea><br>
 
-        <button type="submit">Thêm sách</button>
+        <button
+            class="px-4 py-2 text-white rounded" 
+            style="background-color: #35bfe6;"
+            type="submit">Thêm sách</button>
     </form>
 @endsection

@@ -13,6 +13,7 @@ class Book extends Model
         'bookName',
         'author',
         'description',
+        'price',
     ];
 }
 

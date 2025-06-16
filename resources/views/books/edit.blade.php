@@ -23,6 +23,9 @@
         <label for="author">Tác giả:</label>
         <input type="text" name="author" value="{{ old('author', $book->author) }}"><br>
 
+        <label for="price">Giá (VNĐ):</label>
+        <input type="number" name="price" step="0.01" value="{{ old('price') }}"><br>
+
         <label for="description">Mô tả:</label>
         <textarea name="description">{{ old('description', $book->description) }}</textarea><br>
 

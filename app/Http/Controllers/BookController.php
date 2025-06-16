@@ -42,6 +42,7 @@ class BookController extends Controller
         $validated = $request->validate([
             'bookName' => 'required|max:255',
             'author' => 'required|max:255',
+            'price' => 'nullable|numeric|min:0',
             'description' => 'nullable|string',
         ]);
 
@@ -75,6 +76,7 @@ class BookController extends Controller
         $validated = $request->validate([
             'bookName' => 'required|max:255',
             'author' => 'required|max:255',
+            'price' => 'nullable|numeric|min:0',
             'description' => 'nullable|string',
         ]);
 

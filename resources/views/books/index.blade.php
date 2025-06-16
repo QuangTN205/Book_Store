@@ -28,6 +28,7 @@
             <th style="border: 2px solid #999; padding: 12px; background-color: #f0f0f0;">STT</th>
             <th style="border: 2px solid #999; padding: 12px; background-color: #f0f0f0;">Tên sách</th>
             <th style="border: 2px solid #999; padding: 12px; background-color: #f0f0f0;">Tác giả</th>
+            <th style="border: 2px solid #999; padding: 12px; background-color: #f0f0f0;">Giá</th>
         </tr>
     </thead>
     <tbody>
@@ -36,6 +37,7 @@
                 <td>{{ $index + 1 }}</td>
                 <td>{{ $book->bookName }}</td>
                 <td>{{ $book->author }}</td>
+                <td>{{ $book->price }}</td>
                 <td>
                     <a href="{{ route('books.edit', $book) }}" 
                        class="px-3 py-1 text-white rounded" 
