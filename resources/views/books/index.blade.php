@@ -15,9 +15,19 @@
         <input type="text" name="search" placeholder="Tìm sách theo tên hoặc tác giả"
             value="{{ request('search') }}"
             style="padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px;">
+
+        <select name="sort_by" style="padding: 8px; border-radius: 4px;">
+            <option value="bookName_asc" {{ $sortBy == 'bookName_asc' ? 'selected' : '' }}>Tên sách A-Z</option>
+            <option value="bookName_desc" {{ $sortBy == 'bookName_desc' ? 'selected' : '' }}>Tên sách Z-A</option>
+            <option value="author_asc" {{ $sortBy == 'author_asc' ? 'selected' : '' }}>Tác giả A-Z</option>
+            <option value="author_desc" {{ $sortBy == 'author_desc' ? 'selected' : '' }}>Tác giả Z-A</option>
+            <option value="price_asc" {{ $sortBy == 'price_asc' ? 'selected' : '' }}>Giá tăng dần</option>
+            <option value="price_desc" {{ $sortBy == 'price_desc' ? 'selected' : '' }}>Giá giảm dần</option>
+        </select>
+
         <button type="submit"
             style="padding: 8px 12px; background-color: #35bfe6; color: white; border: none; border-radius: 4px;">
-                🔍 Tìm
+            🔍 Tìm
         </button>
     </form>
 </div>

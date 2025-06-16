@@ -12,18 +12,45 @@ class BookController extends Controller
      */
     public function index(Request $request)
     {
-
         $search = $request->input('search');
+        $sortBy = $request->input('sort_by', 'bookName_asc'); // mặc định A-Z theo tên
 
-        $books = Book::query();
+        $query = Book::query();
 
+        // Tìm kiếm theo tên sách hoặc tác giả
         if ($search) {
-            $books = $books->where('bookName', 'like', "%{$search}%")
-                       ->orWhere('author', 'like', "%{$search}%");
-    }
-        $books = $books->get();
+            $query->where(function ($q) use ($search) {
+                $q->where('bookName', 'like', "%{$search}%")
+                ->orWhere('author', 'like', "%{$search}%");
+            });
+        }
 
-        return view('books.index', compact('books', 'search'));
+        // Sắp xếp theo lựa chọn
+        switch ($sortBy) {
+            case 'bookName_asc':
+                $query->orderBy('bookName', 'asc');
+                break;
+            case 'bookName_desc':
+                $query->orderBy('bookName', 'desc');
+                break;
+            case 'author_asc':
+                $query->orderBy('author', 'asc');
+                break;
+            case 'author_desc':
+                $query->orderBy('author', 'desc');
+                break;
+            case 'price_asc':
+                $query->orderBy('price', 'asc');
+                break;
+            case 'price_desc':
+                $query->orderBy('price', 'desc');
+                break;
+
+        }
+
+        $books = $query->get();
+
+        return view('books.index', compact('books', 'search', 'sortBy'));
     }
 
     /**
