@@ -28,7 +28,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main style="background-color: 	#bdc6d6; height:auto">
                 @yield('content')
             </main>
         </div>

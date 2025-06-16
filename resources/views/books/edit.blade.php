@@ -1,34 +1,60 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>Sửa sách</h2>
+<h2 style="font-size: 24px; font-weight: bold; margin-bottom: 20px;">✏️Chỉnh sửa</h2>
 
-    @if ($errors->any())
-        <div>
-            <strong>Lỗi:</strong>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+@if ($errors->any())
+    <div style="background-color: #ffe0e0; padding: 10px; border: 1px solid red; border-radius: 5px; margin-bottom: 20px;">
+        <strong>Lỗi:</strong>
+        <ul style="margin: 0; padding-left: 20px;">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
-    <form action="{{ route('books.update', $book) }}" method="POST">
+<div style="max-width: 600px; margin: 0 auto;">
+    <form action="{{ route('books.update', $book) }}" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
         @csrf
         @method('PUT')
-        <label for="bookName">Tên sách:</label>
-        <input type="text" name="bookName" value="{{ old('bookName', $book->bookName) }}"><br>
 
-        <label for="author">Tác giả:</label>
-        <input type="text" name="author" value="{{ old('author', $book->author) }}"><br>
+        <div>
+            <label for="bookName" style="font-weight: bold;">Tên sách:</label><br>
+            <input type="text" name="bookName" value="{{ old('bookName', $book->bookName) }}"
+                   style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        </div>
 
-        <label for="price">Giá (VNĐ):</label>
-        <input type="number" name="price" step="0.01" value="{{ old('price') }}"><br>
+        <div>
+            <label for="author" style="font-weight: bold;">Tác giả:</label><br>
+            <input type="text" name="author" value="{{ old('author', $book->author) }}"
+                   style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        </div>
 
-        <label for="description">Mô tả:</label>
-        <textarea name="description">{{ old('description', $book->description) }}</textarea><br>
+        <div>
+            <label for="price" style="font-weight: bold;">Giá (VNĐ):</label><br>
+            <input type="number" name="price" step="1000" min="0" value="{{ old('price', $book->price) }}"
+                   style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+        </div>
 
-        <button type="submit">Cập nhật sách</button>
+        <div>
+            <label for="description" style="font-weight: bold;">Nội dung:</label><br>
+            <textarea name="description" rows="4"
+                      style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">{{ old('description', $book->description) }}</textarea>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+            <button type="submit"
+                    style="background-color: #35bfe6; color: white; padding: 10px 20px; border: none; border-radius: 4px;">
+                💾 Cập nhật sách
+            </button>
+
+            <a href="{{ route('books.index') }}"
+               style="background-color: #999; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">
+                🔙 Quay lại
+            </a>
+        </div>
     </form>
+</div>
 @endsection
+
