@@ -16,6 +16,7 @@
             justify-content: center;
             flex-direction: column;
             color: #1a1a1a;
+            text-align: center;
         }
         h1 {
             font-size: 3rem;
@@ -23,7 +24,13 @@
         }
         p {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         a.button {
             background-color: #3490dc;
@@ -37,16 +44,27 @@
         a.button:hover {
             background-color: #2779bd;
         }
+        a.register {
+            background-color: #38c172;
+        }
+        a.register:hover {
+            background-color: #2f9e63;
+        }
     </style>
 </head>
 <body>
     <h1>📚 Tiệm Sách Trực Tuyến</h1>
     <p>Chào mừng bạn đến với cửa hàng sách của chúng tôi!</p>
-    
+
     @auth
         <a href="{{ url('/dashboard') }}" class="button">Vào trang quản lý</a>
     @else
-        <a href="{{ route('login') }}" class="button">Đăng nhập</a>
+        <div class="buttons">
+            <a href="{{ route('login') }}" class="button">Đăng nhập</a>
+            @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="button register">Đăng ký</a>
+            @endif
+        </div>
     @endauth
 </body>
 </html>
