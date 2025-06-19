@@ -1,61 +1,95 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 Book Store - Laravel Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Họ tên:** Tạ Đăng Quang  
+**Mã sinh viên:** 23010860    
+**Lớp:** COUR01.TH4    
+**Môn:** Thiết kế web nâng cao
 
-## About Laravel
+## 🔍 Giới thiệu Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Đây là ứng dụng **quản lý cửa hàng bán sách online** xây dựng bằng Laravel + Tailwind CSS + MySQL.  
+Ứng dụng có các chức năng chính:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Đăng ký / Đăng nhập
+- CRUD sách (tạo, sửa, xóa, xem danh sách)
+- Giao diện đẹp mắt, responsive
+- Bảo mật CSRF, validation, login bảo vệ route
+- Kết nối Cloud Database (Aiven)
+- Sửa thông tin chi tiết của sách (tên sác, tác giả, giá, nội dung).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🧱 Sơ đồ Dự Án:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![image](https://github.com/user-attachments/assets/f2a44de4-d22e-4b51-b9fc-bde28c283492)    
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🧱 Sơ đồ chức năng    
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Chức năng thêm sách    
+  ![image](https://github.com/user-attachments/assets/01adba32-9635-4d1d-bd83-5df05f3ba074)    
 
-## Laravel Sponsors
+- Chức năng xem thông tin sách    
+  ![image](https://github.com/user-attachments/assets/8b49d776-4f93-4290-a191-4e34912a4ab0)    
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Chức năng chỉnh sửa thông tin sách    
+  ![image](https://github.com/user-attachments/assets/234c5f2f-2bdf-4b13-a419-2bf17227fb7f)    
 
-### Premium Partners
+- Chức năng xóa sách    
+  ![image](https://github.com/user-attachments/assets/b7f4b343-f3a5-4283-87df-160790ff43ff)    
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- Chức năng tìm kiếm    
+  ![image](https://github.com/user-attachments/assets/8968f5ea-4e05-467d-a896-ac8e538dc844)    
 
-## Contributing
+- Chức năng sắp xếp    
+  ![image](https://github.com/user-attachments/assets/1721ce7f-1450-40e2-a39c-87a866c6d11a)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+##    🖼️ Ảnh chụp màn hình chức năng chính
+- Dashboard    
+  ![image](https://github.com/user-attachments/assets/37e04d07-54ee-4d1a-9a99-1e8bceaa267b)
 
-## Code of Conduct
+- Danh sách sách    
+  ![image](https://github.com/user-attachments/assets/6d1e633b-9547-4be3-b739-5d494652b633)
+  
+- Trang thêm sách mới
+  ![image](https://github.com/user-attachments/assets/9d3668c4-4db6-40ee-86cb-204865366933)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Trang sửa thông tin sách
+  ![image](https://github.com/user-attachments/assets/900dc77e-0139-4dfd-88f2-9339632c12d3)
 
-## Security Vulnerabilities
+- Trang hiển thị chi tiết các thông tin
+  ![image](https://github.com/user-attachments/assets/ed3f0411-fa9b-4dbf-a2db-6e4f733de235)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 💡 Code minh họa chính
 
-## License
+- 📦 Model    
+  ![image](https://github.com/user-attachments/assets/453afcc0-7c45-42bd-850f-fa998fb58553)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- 🎮 Controller    
+  ![image](https://github.com/user-attachments/assets/c9fe458a-4796-4487-b40e-1015012af1e8)    
+
+- 🖥️ View    
+  ![image](https://github.com/user-attachments/assets/930a166a-c9cd-4c4a-9585-9737185ae751)
+
+## Link Github Repository:
+
+[Truy cập dự án tại đây](https://github.com/QuangTN205/Book_Store)
+---
+
+## Link Web Local:    
+
+[WEB Local](http://127.0.0.1:8000/)
+---
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
